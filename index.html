@@ -1,26 +1,21 @@
 <!DOCTYPE html>
-<html ng-app="LeadClient">
+<html ng-app="MyApp">
     <head>
         <title>Socket IO Example</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <p>
+        <div ng-controller="MyCtrl">
             <label>Message:</label>
-            <input type="text" id="txtMessage"/>
-            <button onclick="sendMsg(document.getElementById('txtMessage').value)">Send</button>
-        </p>
+            <input type="text" ng-model="message"/>
+            <button ng-click="sendMsg(message)">Send</button>
 
-        <span>Console:</span>
-        <pre id="console"></pre>
+            <div>Console:</div>
+            <pre ng-bind-html="serverLog"></pre>
+        </div>
 
         <script src="http://localhost:8181/socket.io/socket.io.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
         <script src="app.js"></script>
-        <!--
-        <script src="media/vendor/angular/angular.js"></script>
-        <script src="media/vendor/angular-route/angular-route.js"></script>
-        <script src="media/vendor/lodash/dist/lodash.js"></script>
-        <script src="media/vendor/restangular/src/restangular.js"></script>
-        -->
     </body>
 </html>
