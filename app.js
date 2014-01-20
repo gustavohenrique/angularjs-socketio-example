@@ -14,7 +14,7 @@ app.factory('socket', function($rootScope, Server) {
 
     return {
         on: function(eventName, callback) {
-            socket.on(eventName, function() {  
+            socket.on(eventName, function() {
                 var args = arguments;
                 $rootScope.$apply(function() {
                     callback.apply(socket, args);
@@ -52,6 +52,21 @@ app.controller('MyCtrl', function($scope, myService) {
     $scope.sendMsg = function(msg) {
         myService.sendMsg(msg);
     };
-})
+});
+
+app.directive('ngEnter', function() {
+    return {
+        restrict: 'C',
+        link: function(scope, element, attrs) {
+            element.bind("keydown keypress", function(event) {
+                if (event.which === 13) {
+                    scope.sendMsg(scope.message);
+                    scope.message = '';
+                    event.preventDefault();
+                }
+            })
+        }
+    };
+});
 
 })(angular);

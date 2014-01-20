@@ -3,14 +3,17 @@
     <head>
         <title>Socket IO Example</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">>
     </head>
-    <body>
+    <body onload="document.getElementById('txtMessage').focus()">
+        <h1>AngularJS + Socket.io Example</h1>
         <div ng-controller="MyCtrl">
-            <label>Message:</label>
-            <input type="text" ng-model="message"/>
-            <button ng-click="sendMsg(message)">Send</button>
+            <div class="control">
+                <label>Type a message and press the &ltenter&gt key</label>
+                <input type="text" id="txtMessage" ng-model="message" class="ngEnter"/>
+            </div>
 
-            <div>Console:</div>
+            <h2>Console output:</h2>
             <pre ng-bind-html="serverLog"></pre>
         </div>
 
