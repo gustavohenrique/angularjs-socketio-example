@@ -1,0 +1,12 @@
+<div ng-app="MyApp">
+    <h1>AngularJS + Sails Example</h1>
+    <div ng-controller="MyCtrl">
+        <div class="control">
+            <label>Type a message and press the &ltenter&gt key</label>
+            <input type="text" id="txtMessage" ng-model="message" class="ngEnter"/>
+        </div>
+
+        <h2>Console output:</h2>
+        <pre ng-bind-html="serverLog"></pre>
+    </div>
+</div>

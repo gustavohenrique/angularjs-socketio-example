@@ -9,10 +9,10 @@ AngularJS + Socket.io Example
 
 ### install
 
-    npm install socket.io bower --save-dev
+    npm install sails bower --save-dev
     bower install angular
 
 ### run
 
-    node server.js
-    open index.html # will open using default browser
+    node app.js
+    open http://localhost:1337 # will open using default browser
