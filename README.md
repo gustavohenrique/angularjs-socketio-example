@@ -1,6 +1,10 @@
 AngularJS + Socket.io Example
 =============================
 
+### about
+
+There is another example using Sails Framework on the other branch.
+
 ### requirements
 
 * nodejs
